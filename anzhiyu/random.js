@@ -1,0 +1,1 @@
+var posts=["2023/05/16/hexo初始化/","2023/05/16/博客自定义功能/","2023/05/16/hexo自定义/"];function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};
