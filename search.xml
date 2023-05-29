@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>博客更换主题</title>
+      <link href="/2023/05/16/%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%9F%E8%83%BD/"/>
+      <url>/2023/05/16/%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%9F%E8%83%BD/</url>
+      
+        <content type="html"><![CDATA[<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><ul><li>下载主题：您可以在 GitHub 上找到 NexT 主题的仓库，然后将其克隆到您的 themes 文件夹中。例如：</li></ul><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="string">.</span> <span class="string">cd</span> <span class="string">blog</span></span><br><span class="line"><span class="number">2</span><span class="string">.</span> <span class="string">git</span> <span class="string">clone</span> <span class="string">-b</span> <span class="string">main</span> <span class="string">https://github.com/anzhiyu-c/hexo-theme-anzhiyu.git</span> <span class="string">themes/anzhiyu</span></span><br></pre></td></tr></table></figure><ul><li>修改 Hexo 配置：为了启用 NexT 主题，您需要在站点配置文件（位于博客根目录）中找到 theme 字段并将其值更改为anzhiyu。</li></ul><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">anzhiyu</span></span><br></pre></td></tr></table></figure><ul><li>注意 安装额外的主题需要下载渲染器，不然会显示不出来</li></ul><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">npm</span> <span class="string">install</span> <span class="string">hexo-renderer-pug</span> <span class="string">hexo-renderer-stylus</span> <span class="string">--save</span></span><br></pre></td></tr></table></figure><h2 id="便捷的修改主题文件"><a href="#便捷的修改主题文件" class="headerlink" title="便捷的修改主题文件"></a>便捷的修改主题文件</h2><ol><li>将them&#x2F;&lt;主题名&gt;的主题文件复制到根目录，修改为_config_&lt;主题名&gt;.yml</li><li>为了方便修改，建议直接复制主题文件内容到修改的文件中，这样可以方便增删</li><li>_config.&lt;主题名&gt;.yml中的配置优先级大于_config.yml</li></ol><h2 id="本地启动"><a href="#本地启动" class="headerlink" title="本地启动"></a>本地启动</h2><p>清理缓存</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">hexo</span> <span class="string">cl</span></span><br></pre></td></tr></table></figure><p>生成本地文件</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">hexo</span> <span class="string">g</span></span><br></pre></td></tr></table></figure><p>启动本地服务器</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">hexo</span> <span class="string">s</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><p>Hexo的’一键三连’</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">hexo</span> <span class="string">cl</span> <span class="string">&amp;&amp;</span> <span class="string">hexo</span> <span class="string">g</span> <span class="string">&amp;&amp;</span> <span class="string">hexo</span> <span class="string">s</span></span><br></pre></td></tr></table></figure><h2 id="将项目部署到git"><a href="#将项目部署到git" class="headerlink" title="将项目部署到git"></a>将项目部署到git</h2><ol><li>注册github账号，并生成用户名.github.io仓库</li></ol><ul><li>在项目目录下运行命令提示并安装部署包</li></ul><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">npm</span> <span class="string">install</span> <span class="string">hexo-deployer-git</span> <span class="string">--save</span></span><br></pre></td></tr></table></figure><ol><li>修改_config.yml文件的deploy(推荐使用代码片段生成，一键导入)</li></ol><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 云端部署</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">   <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">   <span class="attr">repo:</span> <span class="string">git@github.com:example.github.io.git</span></span><br><span class="line">   <span class="attr">branch:</span> <span class="string">main</span> <span class="comment">##要提交到哪一个分支，主分支名称为main</span></span><br></pre></td></tr></table></figure><ol start="3"><li>配置完成以后执行以下命令</li></ol><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">hexo</span> <span class="string">d</span></span><br></pre></td></tr></table></figure><h2 id="部署到git遇到的问题-amp-amp-解决方法"><a href="#部署到git遇到的问题-amp-amp-解决方法" class="headerlink" title="部署到git遇到的问题&amp;&amp;解决方法"></a>部署到git遇到的问题&amp;&amp;解决方法</h2><p>问题：Spawn failed</p><h2 id="解决方法1"><a href="#解决方法1" class="headerlink" title="解决方法1"></a>解决方法1</h2><ol><li>首先 删除根目录下的 .deploy_git， 执行hexo 一键三连</li></ol><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">hexo</span> <span class="string">cl</span> <span class="string">&amp;&amp;</span> <span class="string">hexo</span> <span class="string">g</span> <span class="string">&amp;&amp;</span> <span class="string">hexo</span> <span class="string">s</span></span><br></pre></td></tr></table></figure><h2 id="如果仍然出现问题"><a href="#如果仍然出现问题" class="headerlink" title="如果仍然出现问题"></a>如果仍然出现问题</h2><h2 id="解决方法2"><a href="#解决方法2" class="headerlink" title="解决方法2"></a>解决方法2</h2><p>如果无法解决，修改git部署的链接，如果是https格式，就更改为ssh格式</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Hexo博客教程 </tag>
+            
+            <tag> Hexo自定义 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo初始化</title>
       <link href="/2023/05/16/hexo%E5%88%9D%E5%A7%8B%E5%8C%96/"/>
       <url>/2023/05/16/hexo%E5%88%9D%E5%A7%8B%E5%8C%96/</url>
@@ -46,35 +75,6 @@
         <tags>
             
             <tag> Hexo博客教程 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>博客更换主题</title>
-      <link href="/2023/05/16/%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%9F%E8%83%BD/"/>
-      <url>/2023/05/16/%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%9F%E8%83%BD/</url>
-      
-        <content type="html"><![CDATA[<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><ul><li>下载主题：您可以在 GitHub 上找到 NexT 主题的仓库，然后将其克隆到您的 themes 文件夹中。例如：</li></ul><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="string">.</span> <span class="string">cd</span> <span class="string">blog</span></span><br><span class="line"><span class="number">2</span><span class="string">.</span> <span class="string">git</span> <span class="string">clone</span> <span class="string">-b</span> <span class="string">main</span> <span class="string">https://github.com/anzhiyu-c/hexo-theme-anzhiyu.git</span> <span class="string">themes/anzhiyu</span></span><br></pre></td></tr></table></figure><ul><li>修改 Hexo 配置：为了启用 NexT 主题，您需要在站点配置文件（位于博客根目录）中找到 theme 字段并将其值更改为anzhiyu。</li></ul><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">anzhiyu</span></span><br></pre></td></tr></table></figure><ul><li>注意 安装额外的主题需要下载渲染器，不然会显示不出来</li></ul><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">npm</span> <span class="string">install</span> <span class="string">hexo-renderer-pug</span> <span class="string">hexo-renderer-stylus</span> <span class="string">--save</span></span><br></pre></td></tr></table></figure><h2 id="便捷的修改主题文件"><a href="#便捷的修改主题文件" class="headerlink" title="便捷的修改主题文件"></a>便捷的修改主题文件</h2><ol><li>将them&#x2F;&lt;主题名&gt;的主题文件复制到根目录，修改为_config_&lt;主题名&gt;.yml</li><li>为了方便修改，建议直接复制主题文件内容到修改的文件中，这样可以方便增删</li><li>_config.&lt;主题名&gt;.yml中的配置优先级大于_config.yml</li></ol><h2 id="本地启动"><a href="#本地启动" class="headerlink" title="本地启动"></a>本地启动</h2><p>清理缓存</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">hexo</span> <span class="string">cl</span></span><br></pre></td></tr></table></figure><p>生成本地文件</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">hexo</span> <span class="string">g</span></span><br></pre></td></tr></table></figure><p>启动本地服务器</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">hexo</span> <span class="string">s</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><p>Hexo的’一键三连’</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">hexo</span> <span class="string">cl</span> <span class="string">&amp;&amp;</span> <span class="string">hexo</span> <span class="string">g</span> <span class="string">&amp;&amp;</span> <span class="string">hexo</span> <span class="string">s</span></span><br></pre></td></tr></table></figure><h2 id="将项目部署到git"><a href="#将项目部署到git" class="headerlink" title="将项目部署到git"></a>将项目部署到git</h2><ol><li>注册github账号，并生成用户名.github.io仓库</li></ol><ul><li>在项目目录下运行命令提示并安装部署包</li></ul><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">npm</span> <span class="string">install</span> <span class="string">hexo-deployer-git</span> <span class="string">--save</span></span><br></pre></td></tr></table></figure><ol><li>修改_config.yml文件的deploy(推荐使用代码片段生成，一键导入)</li></ol><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 云端部署</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">   <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">   <span class="attr">repo:</span> <span class="string">git@github.com:example.github.io.git</span></span><br><span class="line">   <span class="attr">branch:</span> <span class="string">main</span> <span class="comment">##要提交到哪一个分支，主分支名称为main</span></span><br></pre></td></tr></table></figure><ol start="3"><li>配置完成以后执行以下命令</li></ol><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">hexo</span> <span class="string">d</span></span><br></pre></td></tr></table></figure><h2 id="部署到git遇到的问题-amp-amp-解决方法"><a href="#部署到git遇到的问题-amp-amp-解决方法" class="headerlink" title="部署到git遇到的问题&amp;&amp;解决方法"></a>部署到git遇到的问题&amp;&amp;解决方法</h2><p>问题：Spawn failed</p><h2 id="解决方法1"><a href="#解决方法1" class="headerlink" title="解决方法1"></a>解决方法1</h2><ol><li>首先 删除根目录下的 .deploy_git， 执行hexo 一键三连</li></ol><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">hexo</span> <span class="string">cl</span> <span class="string">&amp;&amp;</span> <span class="string">hexo</span> <span class="string">g</span> <span class="string">&amp;&amp;</span> <span class="string">hexo</span> <span class="string">s</span></span><br></pre></td></tr></table></figure><h2 id="如果仍然出现问题"><a href="#如果仍然出现问题" class="headerlink" title="如果仍然出现问题"></a>如果仍然出现问题</h2><h2 id="解决方法2"><a href="#解决方法2" class="headerlink" title="解决方法2"></a>解决方法2</h2><p>如果无法解决，修改git部署的链接，如果是https格式，就更改为ssh格式</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Hexo </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Hexo博客教程 </tag>
-            
-            <tag> Hexo </tag>
-            
-            <tag> Hexo自定义 </tag>
             
         </tags>
       
