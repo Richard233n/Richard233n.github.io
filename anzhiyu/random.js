@@ -1,1 +1,1 @@
-var posts=["2023/05/16/hexo初始化/","2023/05/16/hexo自定义/","2023/05/16/博客自定义功能/","2023/05/29/花样文字/"];function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};
+var posts=["post/21cfbf15.html","post/dc584b87.html","post/4073eda.html","post/4aa8abbe.html","post/ddc3b5d0.html","post/ceeb73f.html","post/98d20436.html","post/19021851.html","post/cd823f99.html"];function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};
