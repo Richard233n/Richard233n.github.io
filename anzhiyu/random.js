@@ -1,3 +1,3 @@
-var posts=["2021/01/11/FirstBlog/"];function toRandomPost(){
+var posts=["2024/05/04/游戏相关/森林之子Mod分享/","2024/05/04/游戏相关/森林之子指令分享/","2022/05/12/Hexo/Hexo部署-1/"];function toRandomPost(){
     pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);
   };
